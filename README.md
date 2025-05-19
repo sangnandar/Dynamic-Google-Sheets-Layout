@@ -6,7 +6,7 @@ This project provides a maintainable way to reference spreadsheet columns by nam
 
 📋 Consider this Sheets layout:
 
-[layout image without Sales Rep]
+![image](https://github.com/user-attachments/assets/fad08209-0cd0-4354-872f-5117d7d27250)
 
 You want to do something like this:
 
@@ -26,9 +26,9 @@ if (orderDate < oneMonthAgo) {
 
 🛠️ Later, due to a business requirement, you insert a new column `Sales Rep` right after `Order ID`.
 
-[layout image with Sales Rep]
+![image](https://github.com/user-attachments/assets/d9572d99-9798-4f1b-89f7-23ca71f14a3e)
 
-💥 Suddenly... your code breaks:
+💥 Suddenly... your code breaks because:
 
 ```js
 const orderDate = new Date(rowData[2]); // is now Sales Rep
@@ -133,7 +133,7 @@ if (orderDate < oneMonthAgo) {
 }
 ```
 
-🎯 Need to add Sales Rep after Order ID? Just update the config:
+🎯 Need to add `Sales Rep` after `Order ID`? Just update the config:
 
   ```js
   const sheetConfig = readOnlyObject({
@@ -162,7 +162,7 @@ The `SheetLayout` class goes beyond just mapping columns—it helps you write sa
 
 ### 🧮 Detect if the sheet has data (excluding headers)
 
-Instead of hardcoding the number of header rows, you can use getHeaderRowCount()—which respects the configuration you've already defined:
+Instead of hardcoding the number of header rows, you can use `getHeaderRowCount()`—which respects the configuration you've already defined:
 
 ```js
 const sheetLayout = new SheetLayout(sheet);
